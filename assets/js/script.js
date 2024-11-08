@@ -91,3 +91,5 @@ function displayStatus(data) {
     resultsModal.show();
 
 }
+
+console.log('If you see this message, your script is running.');
