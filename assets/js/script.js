@@ -8,9 +8,10 @@ document.getElementById("submit").addEventListener("click", e => postForm(e));
 function processOptions(form) {
     let optArray = [];
 
-    for (let e of form.entries()) {
-        if (e[0] === "options") {
-            optArray.push(e[1]);
+    for (let entry of form.entries()) {
+        console.log(entry);
+        if (entry[0] === "options") {
+            optArray.push(entry[1]);
         }
     }
 
@@ -24,7 +25,9 @@ function processOptions(form) {
 async function postForm(e) {
 
     const form = processOptions(new FormData(document.getElementById("checksform")));
-
+    for (let entry of form.entries()) {
+        console.log(entry);
+    }
     const response = await fetch(API_URL, {
         method: "POST",
         headers: {
